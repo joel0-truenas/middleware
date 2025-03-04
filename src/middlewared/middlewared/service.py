@@ -2229,9 +2229,9 @@ class CoreService(Service):
             os.environ['PATHS_FROM_ECLIPSE_TO_PYTHON'] = json.dumps([
                 [options['local_path'], '/usr/local/lib/python3.7/site-packages/middlewared'],
             ])
-            import pydevd
-            pydevd.stoptrace()
-            pydevd.settrace(host=options['host'])
+#            import pydevd
+#            pydevd.stoptrace()
+#            pydevd.settrace(host=options['host'])
         elif engine == 'REMOTE_PDB':
             from remote_pdb import RemotePdb
             RemotePdb(options['bind_address'], options['bind_port']).set_trace()
