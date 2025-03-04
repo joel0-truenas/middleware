@@ -42,7 +42,7 @@ systemctl disable walinuxagent
 systemctl disable openipmi
 
 # nvidia-persistenced is not respecting vendor preset file so we disable it explicitly
-systemctl disable nvidia-persistenced
+#systemctl disable nvidia-persistenced
 
 # Update alternatives
 update-alternatives --install "/usr/sbin/sendmail" sendmail "/etc/find_alias_for_smtplib.sh" "10"
