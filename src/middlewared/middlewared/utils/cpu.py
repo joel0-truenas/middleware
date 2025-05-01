@@ -27,7 +27,7 @@ sensors = None
 
 
 class CpuInfo(typing.TypedDict):
-    cpu_model: str | None
+    cpu_model: str
     """The CPU model"""
     core_count: int
     """The total number of online CPUs"""
@@ -50,10 +50,10 @@ def cpu_info() -> CpuInfo:
 def cpu_info_impl() -> CpuInfo:
     cc = os.sysconf('SC_NPROCESSORS_ONLN') or None
 
-    cm = None
+    cm = 'unknown model'
     with open('/proc/cpuinfo', 'rb') as f:
         for line in filter(lambda x: x.startswith(b'model name'), f):
-            cm = line.split(b':')[-1].strip().decode() or None
+            cm = line.split(b':')[-1].strip().decode() or 'unknown model'
             break
 
     pcc = set()
