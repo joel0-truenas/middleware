@@ -7,7 +7,6 @@ import os
 
 from datetime import date
 from licenselib.license import ContractType, Features, License
-
 from middlewared.plugins.truenas import EULA_PENDING_PATH
 from middlewared.schema import accepts, Bool, returns, Str
 from middlewared.service import CallError, no_authz_required, private, Service, ValidationError
@@ -195,6 +194,14 @@ class SystemService(Service):
         if license_ and name in license_['features']:
             return True
         return False
+
+    @accepts(roles=['READONLY_ADMIN'])
+    @returns(Bool())
+    async def experimental(self):
+        """
+        Return whether the current product is experimental
+        """
+        return sw_info()['experimental']
 
 
 async def hook_license_update(middleware, prev_license, *args, **kwargs):
