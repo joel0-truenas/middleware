@@ -1,3 +1,6 @@
+# Closed source?
+# python3-truenas-pylibsed,
+# python3-truenas-pylicensed,
 Source: middlewared
 Section: admin
 Priority: optional
@@ -56,9 +59,7 @@ Build-Depends: alembic,
                python3-truenas-connect-utils,
                python3-truenas-crypto-utils,
                python3-truenas-pam-utils,
-               python3-truenas-pylibsed,
                python3-truenas-pylibvirt,
-               python3-truenas-pylicensed,
                python3-truenas-pynetif,
                python3-truenas-pyos,
                python3-truenas-pypam,
@@ -153,9 +154,7 @@ Depends: alembic,
          python3-truenas-crypto-utils,
          python3-truenas-pam-utils,
          python3-truenas-pydiscovery,
-         python3-truenas-pylibsed,
          python3-truenas-pylibvirt,
-         python3-truenas-pylicensed,
          python3-truenas-pynetif,
          python3-truenas-pyos,
          python3-truenas-pypam,
