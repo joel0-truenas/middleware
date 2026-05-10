@@ -45,14 +45,8 @@ Depends: acl,
          proftpd,
          proftpd-mod-crypto,
          python3-midcli,
-<<<<<<< HEAD
-         python3-truenas-pylicensed,
-         python3-truenas-pylibsed,
-         qemu-system-x86,
-=======
          qemu-system-x86 [amd64],
          qemu-system-arm [arm64],
->>>>>>> adc1a10c23 (Add support for aarch64)
          truenas-samba,
          truenas-sssd,
          snmpd,
